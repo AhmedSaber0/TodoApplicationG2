@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
 
+
+
+
         fab.setOnClickListener {
             val intent = Intent(this, AddNoteActivity::class.java)
             startActivity(intent)
