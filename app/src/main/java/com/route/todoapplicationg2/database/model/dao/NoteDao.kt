@@ -2,12 +2,14 @@ package com.route.todoapplicationg2.database.model.dao
 
 import androidx.room.*
 import com.route.todoapplicationg2.database.model.Note
+import io.reactivex.Completable
+import io.reactivex.Flowable
 
 @Dao
 interface NoteDao {
 
     @Insert
-    fun addNote(note: Note)
+    fun addNote(note: Note) : Completable
 
     @Update
     fun updateNote(note: Note)
@@ -19,6 +21,6 @@ interface NoteDao {
     fun deleteNoteById(id : Int)
 
     @Query("select * from note")
-    fun getAllNotes() : List<Note>
+    fun getAllNotes() : Flowable<List<Note>>
 
 }

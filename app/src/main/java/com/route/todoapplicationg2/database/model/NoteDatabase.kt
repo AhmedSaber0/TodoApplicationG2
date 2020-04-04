@@ -23,7 +23,6 @@ abstract class NoteDatabase : RoomDatabase() {
                     NoteDatabase::class.java,
                     DB_NAME
                 )
-                    .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
                     .build()
             }
